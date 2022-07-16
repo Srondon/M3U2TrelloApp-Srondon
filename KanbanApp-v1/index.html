@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task List</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="shortcut icon" href="assets/LogoTrelloIco.ico" type="image/x-icon">
+  </head>
+  <body class="l-app" id="app">
+    <!-- Header -->
+    <header class="header-app">
+      <div class="l-container">
+        <img class="logo" src="./assets/LogoTrello.png" alt="App Logo" />
+        <button class="button button-primary" id="btnNewTask"
+          >Create a new task</button
+        >
+      </div>
+    </header>
+    <!-- End: Header -->
+    <!-- Canva -->
+    <main class="main-app">
+      <div class="l-container">
+        <!-- Tablero - Tareas por hacer -->
+        <section class="section-app">
+          <h2 class="section-status-title">To Do</h2>
+          <div class="container-tasks" id="todoTasks"></div>
+        </section>
+        <!-- Fin Tablero - Tareas por hacer -->
+
+        <!-- Tablero - Tareas en progreso -->
+        <section class="section-app">
+          <h2 class="section-status-title">In Progress</h2>
+          <div class="container-tasks" id="progressTasks"></div>
+        </section>
+        <!-- Fin Tablero - Tareas en progreso -->
+
+        <!-- Tarea - Tareas finalizadas -->
+        <section class="section-app">
+          <h2 class="section-status-title">Done</h2>
+          <div class="container-tasks" id="doneTasks"></div>
+        </section>
+        <!-- Fin Tablero - Tareas finalizadas -->
+      </div>
+    </main>
+    <!-- Fin Canva -->
+    <!-- Modal - Formulario crear tarea -->
+    <aside class="aside-app" id="modalNewTask">
+      <div class="l-container">
+        <div class="form-container">
+          <h2 class="aside-form-title">New Task</h2>
+          <form class="form-new-task" id="formNewTask">
+            <div class="row-form">
+              <label for="titleTask" class="form-new-task__label"
+                >Title Task:</label
+              >
+              <input
+                id="titleTask"
+                name="titleTask"
+                type="text"
+                class="form-new-task__input"
+                placeholder="Write the title of your task."
+              />
+            </div>
+            <div class="row-form">
+              <label for="responsibleTask" class="form-new-task__label"
+                >In Charge:</label
+              >
+              <select name="responsibleTask" id="responsibleTask">
+                <option value="">--Select</option>
+                <option value="opc1">Testing</option>
+                <option value="opc2">Backend</option>
+              </select>
+            </div>
+
+            <div class="row-form">
+              <label for="detailsTask" class="form-new-task__label"
+                >Description Task:</label
+              >
+              <textarea class="" name="detailsTask" id="detailsTask cols="3" rows="3" placeholder="Describe the task."></textarea>
+            </div>
+
+            <div class="row-form">
+              <label for="deadLineTask" class="form-new-task__label"
+                >Deadline Task:</label
+              >
+              <select name="deadLineTask" id="deadLineTask">
+                <option value="">-- Select</option>
+                <option value="oneDay">1 Day</option>
+                <option value="threeDay">3 Days</option>
+                <option value="oneWeek">1 Week</option>
+                <option value="oneMonth">1 Month</option>
+              </select>
+            </div>
+            <div class="row-form">
+              <div class="form-new-task__buttons">
+                <button class="button button-primary" type="submit"
+                  >Save Task</button
+                >
+                <button
+                  class="button button-secondary ghost"
+                  type="reset"
+                  id="btnCancelNewTask"
+                  >Cancel</button
+                >
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </aside>
+  </body>
+</html>
